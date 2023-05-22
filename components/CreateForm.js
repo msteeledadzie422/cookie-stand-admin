@@ -12,9 +12,9 @@ const CreateForm = ({ onCookieStandCreate }) => {
 
         const cookieStand = {
             location,
-            minCustomersPerHour: parseFloat(minCustomersPerHour),
-            maxCustomersPerHour: parseFloat(maxCustomersPerHour),
-            avgCookiesPerSale: parseFloat(avgCookiesPerSale),
+            minimum_customers_per_hour: parseFloat(minCustomersPerHour),
+            maximum_customers_per_hour: parseFloat(maxCustomersPerHour),
+            average_cookies_per_sale: parseFloat(avgCookiesPerSale),
         };
 
         onCookieStandCreate(cookieStand);

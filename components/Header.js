@@ -1,7 +1,11 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useAuth } from '../contexts/auth';
+
 
 export default function Header() {
+    const { logout } = useAuth();
+
   const router = useRouter();
 
   const handleNavigateToMainPage = () => {
@@ -17,7 +21,9 @@ export default function Header() {
         <Link href="/overview">
           <button className="text-black font-bold" style={{ color: 'black' }}>Overview</button>
         </Link>
+          <button onClick={logout} className="p-2 text-white bg-gray-500 rounded">Logout</button>
       </div>
     </header>
   );
 }
+

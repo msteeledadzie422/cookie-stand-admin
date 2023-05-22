@@ -1,6 +1,10 @@
 import { hours } from '../data';
 
 const CookieStandList = ({ cookieStandList }) => {
+  if (!cookieStandList || cookieStandList.length === 0) {
+    return <p>No Cookie Stands Available</p>
+  }
+
   const generateSalesPerHour = (cookieStand) => {
     const { minCustomersPerHour, maxCustomersPerHour, avgCookiesPerSale } = cookieStand;
     const salesPerHour = [];
@@ -15,10 +19,6 @@ const CookieStandList = ({ cookieStandList }) => {
 
     return salesPerHour;
   };
-
-  if (cookieStandList.length == 0) {
-    return <p>No Cookie Stands Available</p>
-  }
 
   const totalSalesPerHour = hours.map((hour, index) => {
     let total = 0;
